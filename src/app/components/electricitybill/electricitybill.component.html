@@ -1,0 +1,9 @@
+<h1>Electricity Bill Generator</h1>
+
+
+
+<label for ="units"> Enter the number of units consumed : </label> 
+<input type="number" name="units" id="units" [(ngModel)]="units"> <br>
+<button (click)="calculateBill()"> Calculate Bill</button> <br>
+
+<p> Your Electricity Bill is <b> Rs. {{total}} /- </b> </p>
