@@ -1,0 +1,77 @@
+<div class="jumbotron">
+    <h1 class = "display-1 text-center">Weather Data</h1>
+</div>
+<div class = "container d-flex align-items-center flex-column justify-content-center h-100"> 
+
+<form class="form-horizontal">
+
+    <div class="form-row">
+        <input class="form-control mt-3" type="text" name="city" id="city" placeholder="Enter City" [(ngModel)]="city"
+        style="border-radius: 5px;">
+    </div>
+    <div class="form-row">
+        <input class="btn btn-dark btn-outline btn-sm btn-block mt-3 " type="button" value="Get Current Weather" (click)="getWeatherOfCity()" style="border-radius: 5px;">
+    </div>
+</form>
+</div>
+<div class="container mt-5">
+<table *ngIf="displayData" class="table">
+
+    <tr>
+
+        <th>Country</th>
+
+        <td>{{cityWeatherData.sys.country}}</td>
+
+    </tr>
+
+    <tr>
+
+        <th>City</th>
+
+        <td>{{cityWeatherData.name}}</td>
+
+    </tr>
+
+    <tr>
+
+        <th>Temperature</th>
+
+        <td>{{(cityWeatherData.main.temp-273.15).toFixed(2)}} °C </td>
+
+    </tr>
+
+    <tr>
+
+        <th>Minimum Temperature</th>
+
+        <td> {{(cityWeatherData.main.temp_min-273.15).toFixed(2)}} °C</td>
+
+    </tr>
+
+    <tr>
+
+        <th>Maximum Temperature</th>
+
+        <td>{{(cityWeatherData.main.temp_max-273.15).toFixed(2)}} °C</td>
+
+    </tr>
+
+    <tr>
+
+        <th>Pressure</th>
+
+        <td>{{cityWeatherData.main.pressure}} hpa</td>
+
+    </tr>
+
+    <tr>
+
+        <th>Wind Speed</th>
+
+        <td>{{cityWeatherData.wind.speed}} ms</td>
+
+    </tr>
+
+</table>
+</div>
